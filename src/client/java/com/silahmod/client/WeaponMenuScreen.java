@@ -31,12 +31,13 @@ public class WeaponMenuScreen extends Screen {
 	/** Menu yerlesimi: her sutun icin esya indeksleri. Sutun 0-1 = Silahlar, sutun 2 = Zirhlar ve medkit. */
 	private static final int[][] COLUMNS = {
 			{ 0, 1, 2, 3 },
-			{ 4, 5, 6, 7, 13, 17, 18, 19, 20 },
+			{ 4, 5, 6, 7, 13 },
+			{ 17, 18, 19, 20 },
 			{ 8, 9, 10, 11, 12 },
 			{ 14, 15, 16 }
 	};
-	private static final int ROWS = 9;           // en uzun sutunda 9 esya
-	private static final int BUTTON_W = 84;
+	private static final int ROWS = 5;           // en uzun sutunda 5 esya
+	private static final int BUTTON_W = 78;
 	private static final int BUTTON_H = 18;
 	private static final int GAP = 3;
 	private static final int ICON_SPACE = 16;    // butonun solundaki ikon alani
@@ -85,13 +86,13 @@ public class WeaponMenuScreen extends Screen {
 
 		graphics.drawCenteredString(this.font, this.title, this.width / 2, top() - 22, 0xFFFFFFFF);
 		// "Silahlar" basligi iki sutunun ortasinda
-		int weaponsCenter = (columnX(0) + columnX(1) + BUTTON_W) / 2;
+		int weaponsCenter = (columnX(0) + columnX(2) + BUTTON_W) / 2;
 		graphics.drawCenteredString(this.font, Component.translatable("gui.silahmod.weapons"),
 				weaponsCenter, top() - 10, 0xFFAAAAAA);
 		graphics.drawCenteredString(this.font, Component.translatable("gui.silahmod.armors"),
-				columnX(2) + BUTTON_W / 2, top() - 10, 0xFFAAAAAA);
-		graphics.drawCenteredString(this.font, Component.translatable("gui.silahmod.cars"),
 				columnX(3) + BUTTON_W / 2, top() - 10, 0xFFAAAAAA);
+		graphics.drawCenteredString(this.font, Component.translatable("gui.silahmod.cars"),
+				columnX(4) + BUTTON_W / 2, top() - 10, 0xFFAAAAAA);
 
 		// Her butonun soluna esya ikonu
 		int y = top();
